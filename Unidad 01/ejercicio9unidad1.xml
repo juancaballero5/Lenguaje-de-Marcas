@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros xmlns:dc="http://purl.org/dc/elements/1.1">
+    <libro>
+        <dc:title>titulo1</dc:title>
+        <dc:publisher>autor1</dc:publisher>
+        <dc:language>español</dc:language>
+        <fecha>2022</fecha>
+    </libro>
+    <libro>
+        <dc:title>titulo2</dc:title>
+        <dc:publisher>autor2</dc:publisher>
+        <dc:languague>español</dc:languague>
+        <fecha>2020</fecha>
+    </libro>
+</libros>
