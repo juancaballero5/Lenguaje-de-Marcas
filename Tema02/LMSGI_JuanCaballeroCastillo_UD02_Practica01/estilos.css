@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    margin: 0;
+}
+
+.cabecera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0%;
+    text-align: center;
+}
+
+#contenido-principal{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.tarjeta{
+    background: #f0f0f0;
+    border-radius: 12px;
+    width: min(900px, 95%);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,10);
+    align-items: center;
+}
+
+header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c3e50;
+}
+
+.imagen-banda{
+    text-align: center;
+    margin-bottom: 20px;
+    width: auto;
+    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+
+.lista-integrantes{
+    list-style-type: disc;
+    padding-left: 10px;
+}
+
+.tabla-exitos{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.tabla-exitos th, .tabla-exitos tr{
+    border: 1px solid #ddd;
+}
+
+.tabla-exitos th{
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+}
+
+.tabla-exitos td{
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.enlace-web a{
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-web a:hover{
+    color: #c0392b;
+}
+
+footer{
+    color:#7f8c8d ;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
