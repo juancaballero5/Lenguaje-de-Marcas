@@ -4,139 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name ="description" content ="Portal de videojuegos">
-    <link rel ="stylesheet" href ="estilos.css">
+    <link rel ="stylesheet" href ="../estilos.css">
     <title>Document</title>
 </head>
 <body>
     <header class="cabecera">
         <div class ="brand">
-            <img src="../Ejercicio00/imagenes/gamezone-logo.png" alt="Logo de GameZone"class ="logo">
+            <img src="../imagenes/gamezone-logo.png" alt="Logo de GameZone"class ="logo">
         </div>
         <h1 class="titulo">GameZone</h1>
         <nav class="navegacion">
             <ul class="menu">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="#">Noticias</a></li>
                 <li><a href="#">Guías</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-                <li><a href="pages/registro.html">Registro</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="#">Tienda</a></li>
             </ul>
         </nav>
     </header>
 
+    <!--CONTENIDO PRINCIPAL-->
     <main id="contenido-principal">
-        <section class="intro tarjeta">
-            <h2>Bienvenidos a GameZone</h2>
-            <p>Portal de ejemplo para practicar HTML y CSS</p>
-            <p class="aviso">Hoy:estructura semántica y box model sobre esta tarjeta</p>
-        </section>
+        <!--SECTION con DOS clases:  'tarjeta' (estilo global) y 'tienda' (estilo especifico)-->
+        <section class="tarjeta tienda">
+            <h2>Productos destacados(con FLEX)</h2>
 
-        <!-- Sección que contendrá listas y tablas-->
+            <div class="lista-cards lista-cards--flex">
 
+                <!--Primer producto-->
+                <article class="card">
 
-        <section class="listas-y-tablas tarjeta">
-            <h2>Guía rapida</h2>
-            <div class="listas"></div>
-            <div class="listas">
-                <div>
-                    <h3>Características</h3>
-                    <ul class="lista">
-                        <li>Análisis semanal</li>
-                        <li>Guías paso a paso</li>
-                        <li>Comunidad activa</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Primeros pasos</h3>
-                    <ol class="lista">
-                        <li>Elige tu género favorito</li>
-                        <li>Explora la galería</li>
-                        <li>Lee las guías</li>
-                        <li>Comparte tu opinión</li>
-                    </ol>
-                </div>
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
+                <article class="card">
+
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
             </div>
-            <!--La tabla-->
-            <h3>Top ventas</h3>
-            <table class="tabla">
-                <thead>
-                    <tr>
-                        <th>Juegos </th>
-                        <th>Plataforma</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Racing Challenge</td>
-                        <td>PC</td>
-                        <td>120.00€</td>
-                    </tr>
-                    <tr>
-                        <td>Magic Realms</td>
-                        <td>PS</td>
-                        <td>95.90€</td>
-                    </tr>
-                    <tr>
-                        <td>City Builder</td>
-                        <td>Switch</td>
-                        <td>81.20€</td>
-                    </tr>
-                </tbody>
-            </table>
+
         </section>
-        <section class="tarjeta">
-            <!-- action indica la pagina que recibira los datos--> 
-            <!-- El method=get  envia la información en la URL-->
-            <!--name sirve  para identificar simplemente al formulario-->
-            <form  name="buscar" action="buscar.html" method="get"> 
-                <!--label conecta visualmente y funcional con el campo a traves de for-->    
-                <label for="search">Buscar juego:</label>
-                
-                <!--id identifica unívocamente  al elemento y ademas  se conecta con el label-->
-                <!--placeholder ofrece  una pista visual al usuario-->
-                <!-- name define el nombre  de la variable que se enviará al servidor cuando se pulse el botón-->
-                <input type="search" name="busqueda" id="search"        
-                placeholder="Escribe título ...">
-                <button type="submit">Buscar</button>
-            </form>
+        <section class="tarjeta tienda">
+            <h2>Productos destacados (con GRID)</h2>
 
-            <!-- Formulario de registro-->
-            <label for="nombre"></label>
+            <div class="lista-cards lista-cards--grid">
+
+                <!--Primer producto-->
+                <article class="card">
+
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
+
+                <article class="card">
+
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
+                <article class="card">
+
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
+
+                <article class="card">
+
+                    <!-- Imagen -->
+                    <img src="../imagenes/mouse.png" alt="Ratón Gaming RGB" class="card-imagen">
+
+                    <!--Titulo de producto-->
+                    <h3 class="card-titulo">Ratón gaming RGB</h3>
+
+                    <!--Descrpción-->
+                    <p class="card-description">
+                        Ratón ergonómico con 6 botones y sensor de alta precisión 
+                    </p>
+
+                    <!--Precio-->
+                    <p class="card-precio">
+                        19,99€
+                    </p>
+
+                    <!-- Botón -->
+                    <a href="#" class="card-boton">Añadir al carrito</a>
+                </article>
+            </div>
+
         </section>
-        <section class="tarjeta">
-            <h2>Registro de usuario</h2>
-            <form action="registro.php" method="post">
-                <!--Campo de texto-->
-                <label for="name">Nombre de usuario:</label>
-                <input type="text" name="nombre" id="name" required>
 
-                <!--Campode tipo email-->
-                <label for="email">Email:</label>
-                <input type="email" name="correo" id="email" placeholder="correo@example.com" required>
+        <!-- Layout por áreas -->
 
-                <!-- Campo de tipo contraseña-->
-                <label for="password">Contraseña:</label>
-                <input type="password" name="clave" id="pass" minlength="6" maxlength="12" required>
-
-                <!-- Campo de tipo texto con patrón-->
-                <label for="id">DNI/NIE:</label>
-                <input type="text" name="documento-id" id="id" pattern="([X-Zx-z][0-9]{7}|[0-9]{8})[A-Za-z]" required>
-
-                <!--Campo de tipo numerico-->
-                <label for="age">Edad:</label>
-                <input type="number" name="age" id="age" min="0">
-
-                <button type="submit">Registrar</button>
-            </form>
+        <section class="tarjeta practica-grid">
+            <h2>Layout por áreas</h2>
+            <div class="contenedor-areas">
+                <header class="area-header">HEADER</header>
+                <nav class="area-menu">MANU</nav>
+                <main class="area-main">MAIN</main>
+                <aside class="area-aside">ASIDE</aside>
+                <footer class="area-footer">FOOTER</footer>
+            </div>
         </section>
 
-        <!--Otros campos de formulación-->
-        <section class="tarjeta">
-            <h2>Otro campos de formulación</h2>
-            <form name="contacto" action="contacto.php" method="post">
-                
-            </form>
+        <section class="tarjeta practica-grid">
+            <h2>Práctica de Grid</h2>
+            <div class="contenedor-grid">
+                <div class="item-grid item-1">1</div>
+                <div class="item-grid item-2">2</div>
+                <div class="item-grid item-3">3</div>
+                <div class="item-grid item-4">4</div>
+                <div class="item-grid item-5">5</div>
+                <div class="item-grid item-6">6</div>
+            </div>
+        </section>
+
+        <section class="tarjeta practica-grid-container">
+            <h2>Layout por contenedor</h2>
+            <div class="item-desigual-1">item 1</div>
+            <div class="item-desigual-2">item 2</div>
+            <div class="item-desigual-3">item 3</div>
+            <div class="item-desigual-4">item 4</div>
         </section>
 
     </main>
