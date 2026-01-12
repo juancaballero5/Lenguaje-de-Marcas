@@ -33,3 +33,17 @@ console.log("Puntos: ",puntos);
 const a = 10;
 const b = 3;
 console.log("Suma: ",a + b);
+console.log("Resta: ",a - b);
+console.log("Multiplicación: ",a * b);
+console.log("División: ",a / b);
+console.log("Resto (Modulo): ",a % b);
+console.log("Potencia: ",a ** b);
+console.log("Parte entera: ",Math.trunc(a/b)); // Numero entero
+console.log("Parte baja: ",Math.floor(a/b)); // Numero bajo
+console.log("Parte superior: ",Math.ceil(a/b));  // Numero alto
+
+// Tipo primitivos de manejo de String
+
+const nombre = "Compi";
+console.log("Hola" + nombre);
+console.log(`Hola ${nombre}`);
