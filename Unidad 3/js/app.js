@@ -164,6 +164,22 @@ const suma = (a,b) => {
     return a+b;
 };
 
+const total2 = (precio,unidades) => precio + unidades;
+
 console.log("Función Tradicional:",func);
 console.log("Función Flecha:",func2);
 console.log("Suma:",suma(4,10));
+console.log("Total:",total2(21.12,5));
+
+// Mini reto: función que recibe un objeto y devuelve un template string
+
+function etiquetaProducto(prod) {
+    return `${prod.nombre} - ${prod.precio}€`;
+};
+
+console.log(etiquetaProducto({nombre:"Ratón", precio:12.99}));
+
+// Crea un array de 3 objetos productos (nombre/precio)
+// y una función que devuelva el precio total sumado
+//  (aqui puedes hacerlo simple: sumar 3 elementos a MutationObserver, sin bucles si no quieres entrar).
+
