@@ -2,11 +2,10 @@
 <!ELEMENT sucursal (cuenta+)>
 <!ATTLIST sucursal ID NMTOKEN #IMPLIED>
 <!ATTLIST sucursal id NMTOKEN #IMPLIED>
-<!ELEMENT cuenta (cliente+,saldo?,codigo?)>
-<!ATTLIST cuenta iban NMTOKEN #IMPLIED>
-<!ELEMENT cliente (nombre?,numero?,telefono?)>
+<!ELEMENT cuenta (cliente+,saldo?)>
+<!ATTLIST cuenta iban NMTOKEN #REQUIRED>
+<!ELEMENT cliente (nombre,numero?,telefono?)>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT numero (#PCDATA)>
 <!ELEMENT saldo EMPTY>
 <!ELEMENT telefono (#PCDATA)>
-<!ELEMENT codigo EMPTY>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE banco SYSTEM "banco.dtd">
 <banco>
     <!--Sucursal 1-->
@@ -16,8 +18,8 @@
         <!--Cuenta 2 de la sucursal 1-->
         <cuenta iban="C002S1">
             <cliente>
-                <nombre></nombre>
-                <telefono></telefono>
+                <nombre>Lola Hernandez</nombre>
+                <telefono>986374568</telefono>
             </cliente>
         </cuenta>
     </sucursal>

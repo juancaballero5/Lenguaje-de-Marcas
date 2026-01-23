@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventario SYSTEM "T1-Exam-DTD-CaballeroJuan.dtd"> 
+
+<inventario>
+    <item sku="EUR">
+        <nombre>calculadora</nombre>
+        <precio>2</precio>
+        <stock>6</stock>
+    </item>
+    <item sku="USD">
+        <nombre>Tronco</nombre>
+        <precio>45</precio>
+        <stock>7</stock>
+    </item>
+    
+</inventario>

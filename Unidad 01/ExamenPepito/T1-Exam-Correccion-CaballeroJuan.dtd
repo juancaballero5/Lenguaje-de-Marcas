@@ -1,0 +1,10 @@
+<!ELEMENT catalogo (libro+,resumen)>
+<!ELEMENT libro (titulo,autor,detalles)>
+<!ATTLIST libro id NMTOKEN #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT detalles (editorial,precio,stock?)>
+<!ELEMENT editorial (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT stock (#PCDATA)>
+<!ELEMENT resumen (#PCDATA)>
