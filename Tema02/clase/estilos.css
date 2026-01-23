@@ -1,0 +1,595 @@
+/*Modelo de caja universal */
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    height : 100%;
+}
+
+/*Configuracion general:
+-Quitamos los márgenes por dofectro
+-Elegimos una tipografia base
+-Definimos color de texto y fondo
+*/
+body{
+    margin : 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#333;
+    background:#f0f0f0;
+    display: flex;  /* Contenedor flexible*/
+    flex-direction: column;
+    min-height: 100vh;    /*  Altura total del viewport */
+}
+
+/*Cabecera centrada y con espacio de relleno (padding)*/
+.cabecera{
+    text-align: center;
+    padding: 1rem; /* 1rem en este caso ocupa 16 pixeles(puede cambiar)*/
+    display: flex;
+    justify-content: space-between;  /*separa brand y menu*/
+    align-items: center;     /*Centrar verticalmente*/
+    background: #2C3E50;
+    color: #fff;
+}
+
+/*Tamaño del logo*/
+
+.logo{
+    height: 100px;
+    width: auto;
+}
+
+
+/*Menu con FLEX*/
+
+.menu{
+    list-style: none;    /*Quitamos las viñetas*/
+    display: flex;      /*Colocamos en linea los enlaces*/
+    gap: 1rem;      /*Separo los enlaces*/
+    margin: 0;
+    padding: 0;
+}
+
+/*Estilo basico de los enlaces del menú*/
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Enlace activo del menú (página actual) */
+.menu a.activo {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 0.2rem;
+}
+
+/*Efecto hover para los enlaces*/
+.menu a:hover{
+    background-color: #fff;
+    color: #299231;
+}
+
+/*Titulo de la cabecera sin margenes extra y color destacado*/
+
+.titulo{
+    margin: 0;
+    color: #2C3E50;
+}
+
+/*Zona principal(main) le ponemos un poco de padding(es el relleno) */
+
+#contenido-principal{
+    padding: 1rem;
+    flex-grow: 1;       /*Esto empuja el footer hacia abajo*/
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+/*clase "tarjeta": usada para agrupar secciones siaulmente
+    -color blanco
+    -borde sutil y redondeado por las esquinas
+    -sombra ligera
+    -ancho maximo controlado
+
+*/
+
+.tarjeta{
+    background: #f0f0f0;
+    border-radius: 12px;
+    width: min(900px, 95%);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,10);
+}
+
+/*Texto secundario*/
+.aviso{
+    color:#7f8c8d
+}
+
+/*Listas en dos columnas flexibles (FLEX)*/
+.listas{
+    display: flex;   /* Convierto el contenedor en flexible */
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/*Ajustes visuales de las listas*/
+
+.lista {
+    padding-left: 20px;
+}
+
+.lista li{
+    margin: 0.5rem 0;  /*Separación vertical entre los elementos*/
+
+}
+
+/* Estilamos las tablas */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Border y relleno  a las celdas*/
+
+.tabla th, .tabla td{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tabla th {
+    background: #2C3E50;
+    color: #ddd;
+    text-align: center;
+}
+
+.tabla td {
+    text-align: left;
+    white-space: nowrap;   /* Evita saltos de linea en celdas */
+}
+
+
+/*========= FORMULARIO DE REGISTRO  ===========*/
+
+.form-registro{
+    background-color:#fff ;
+    border: 4px solid darkgoldenrod;
+    border-radius: 7px;
+    padding: 1rem;
+    width:380px ; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: firebrick;
+    margin: 0 auto;
+}
+
+
+.form-row{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 1rem;
+
+}
+
+.form-row label{
+    font-weight: bold;
+}
+
+.form-row button {
+    background-color: firebrick;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.form-row button:hover{
+    background-color: darkred;
+}
+
+.pie{
+    text-align: center ;
+    padding: 1rem;
+    color: #7f8c8d;
+    background: #38707e;
+    font-size: 14px;
+}
+
+/* ==================
+   SECCION CONTACTO
+   ==================
+*/
+
+.contacto-ubicacion {
+    margin-top: 2rem;
+    /* height: 1000px; */
+}
+
+.mapa-contenedor {
+    margin-top: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Esto equivale a */
+        /* margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto; */
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 350px;
+    /* aspect-ratio: 16 / 9; */
+    border: 0;
+    border-radius: 8px;    
+}
+
+/*================
+SECCIÓN TIENDA
+==================*/
+
+.tarjeta.tienda{
+    width: min(1200px,95%);
+}
+
+/* Contenedor de los cards*/
+
+.lista-cards--flex{
+    display:flex ;    /*Activa el modelo flex*/
+    flex-wrap: wrap;  /*Permite que las cards salten de linea si no caben*/
+    gap: 16px;        /* Espacio uniforme entre las cards*/
+    justify-content: center;    /*Centra horizontalmente todas las cards */
+}
+
+/* Card individual*/
+
+.card{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Imagen dentro de la card */
+
+.card-imagen{
+    width: 100%;           /* Ocupa todo el ancho disponible dentro de la card */
+    height: 180px;         /* Altura fija para todas las imagenes */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+/* Textos */
+
+.card-titulo {
+    color: #333;
+    font-size: 0.9rem;
+    margin:8px 0 4px;
+}
+
+.card-descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 3.5rem;  /* Mantiene altura uniforme aunque cambie el texto */
+}
+
+.card-precio {
+    color: #b60000;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.card-boton {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #2C3E50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* display: inline-block:
+   Por defecto , los enlaces <a>  son elementos en línea y no acptan padding vertical real ni border-radius bien definidos.
+   */
+
+/*================
+PRACTICA GRID
+==================*/
+
+.contenedor-grid > :nth-child(1) {background-color: aquamarine;}   /* ">" es un selector de hijo directo */
+.contenedor-grid > :nth-child(2) {background-color: red;}
+.contenedor-grid > :nth-child(3) {background-color: greenyellow;}
+.contenedor-grid > :nth-child(4) {background-color: purple;}
+.contenedor-grid > :nth-child(5) {background-color: goldenrod;}
+.contenedor-grid > :nth-child(6) {background-color: blue;}
+
+.contenedor-grid {
+    display: grid;   /* Activamos Grid */
+    /* 3 columnas exactas */
+    /*grid-template-columns: 200px 200px 200px; 
+    /*grid-template-columns: repeat(3,200px);*/
+    /*grid-template-rows: 100px 100px 100px ;   /* 2 filas exactas */
+    /*gap: 10px ;                           /*Espacio uniforme entre filas y columnas*/
+    /*justify-content: center;
+    padding: 10px;
+    grid-template-columns: auto 3fr 1fr ;*/ 
+    background-color: #eaeaea;
+    padding: 10px;
+    grid-template-columns: repeat(3,200px);
+    grid-template-rows: 75px 125px;
+    gap: 20px;
+    min-height: 300px;
+
+    /* Alineación de los elementos dentro de cada celda */
+    justify-items: start;  /* Tienen 4 opciones : start, center, end, y stretch(predeterminado)*/
+    align-items: center;
+    /* Atajo: place-items align-items + justify-items*/
+    place-items: start center;
+
+    /* Alineación de la cuadricula de celdas de dentro del div */
+    justify-content: center;    /* Tienen 6 opciones : start, center, end, stretch, space-between, space-around y space-evenlyn*/
+    align-content: start;
+    /* Atajo: place-content = align-content + justify-content*/
+    place-content: center start;
+
+}
+
+.item-1 {
+    /* Propiedades de alineación de un item especifico dentro de su celda*/
+    justify-self: center; 
+    align-self: center;
+    /* Atajo: place-self = align-self + justify-self*/
+    place-self: center;
+    order: 1;
+}
+
+.item-3 {
+    /* Propiedades de alineación de un item especifico dentro de su celda*/
+    justify-self: center; 
+    align-self: center;
+    /* Atajo: place-self = align-self + justify-self*/
+    place-self: center;
+    order: -3; /* Se ordena el item de manera que el predeterminado es 0 y se pueden poner em negativo*/
+}
+
+.item-grid {
+    color: #000;
+    font-weight: bold;
+    border: 2px solid #60a3bc;
+    font-size: 1.2rem;
+}
+
+/* SECCIÓN TIENDA GRID */
+
+.lista-cards--grid{
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));   
+    /*
+    - minmax (280px, 1fr):
+        Cada card mide como minimo 280 px hasta 
+        que como maximo ocupa 1fr (Ocupa todo el espacio que quede)
+    - auto-fill:
+        Intenta "rellenar" la fila con tantas columnas como quepa.
+        Si sobra huecos, los reserva (aunqye queden vacios).
+    - auto-fit:
+        Colapsa los huecos y deja que las cards se ensanchen
+    */
+    gap: 16px;
+}
+
+/* GRID POR AREAS */
+
+.contenedor-areas{
+    display: grid;
+    min-height: 400px;
+    grid-template-columns: 200px 2fr 1fr;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 16px;
+
+    grid-template-areas: 
+        "cabecera    cabecera     cabecera"
+        "menu        principal    ads"
+        "pie         pie           pie"
+    ;
+}
+
+.area-header {
+    grid-area: cabecera; background-color: #b60000;
+}
+.area-menu {
+    grid-area: menu; background-color: #299231;
+}
+
+.area-main {
+    grid-area: principal; background-color: #60a3bc;
+}
+
+.area-aside {
+    grid-area: ads; background-color: blueviolet;
+}
+
+.area-footer{
+    grid-area: pie;
+    background-color: blue;
+}
+
+/* ========================
+   SECCION JUEGOS
+   ========================
+*/
+
+.tarjeta.juegos {
+    width: min(1700px, 95%);
+}
+
+/* Catálogo de juegos enfoque ESCRITORIO FIRST */
+.lista-cards--grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card-destacada {
+    /* grid-column: span 2; */
+    background-color: #82d2e5;
+    border: 2px solid red;
+}
+
+/* ================================================
+   SECCION GUIAS (diferente estructura al resto)
+   ================================================
+*/
+.guias h1 {
+    margin-top: 0;
+}
+
+.guias-videos {
+    margin-top: 2rem;
+}
+
+.guias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cada guía individual */
+.guia-video h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste de los iframes */
+.guia-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Mantiene el formato panorámico */
+    border: 0;
+    border-radius: 8px;
+}
+
+/* ===== Layout especial para la página de Guías ===== */
+
+/* Contenedor principal: menú lateral + contenido en fila */
+.layout-guias .layout-guias-contenido {
+    display: flex;
+    flex: 1;
+}
+
+/* Menú lateral */
+.layout-guias .navega-lateral {
+    background: #34495E;
+    padding: 1rem 0.5rem;
+    min-width: 200px;
+}
+
+/* Menú en columna solo en la página de Guías */
+.layout-guias .navega-lateral .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Enlaces del menú lateral ocupan todo el ancho */
+.layout-guias .navega-lateral .menu a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+.layout-guias .navega-lateral .menu a:hover {
+    background: #2C3E50;
+    color: #E74C3C;
+}
+
+/* El main se expande para ocupar el resto del espacio */
+.layout-guias #contenido-principal {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* =========================
+    SECCION NOTICIAS
+    TARJETAS DE VÍDEO Y AUDIO
+   ========================= */
+.video-card,
+.audio-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;   /* superior 10px */
+    margin-bottom: 0;   /* inferior 0 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-card h2,
+.audio-card h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Vídeos y audios */
+video,
+audio {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 10px auto; /* centrado, margen inferior 10px */
+    border-radius: 5px;
+}
+
+/* Iframe del vídeo de YouTube */
+.video-card iframe {
+    display: block;
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+}
+
+
+/* VERSION MOVILES */
+/* @media (width < 768px ) {}*/
+@media screen and (width < 768px){
+    .tienda.juegos {
+        width: 95%;
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: minmax(220px, 1fr);
+    }
+}
+
+/* VERSION TABLET */
+/* @media (768px <= width < 1024px) {}*/
+@media screen and (768px <= width < 1024px){
+    .tienda.juegos {
+        width: min(1000px, 95%);
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
