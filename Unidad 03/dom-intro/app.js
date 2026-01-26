@@ -24,3 +24,7 @@ app.innerHTML = `
     <strong>Menos mal que empieza el finde.</strong>
     </p>
 </section>`;
+
+// Métodos modernos para modificar contenido
+
+console.log(app.getHTML());
