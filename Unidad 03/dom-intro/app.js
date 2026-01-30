@@ -56,3 +56,51 @@ div.appendChild(parrafo);
 div.appendChild(articulo);
 articulo.appendChild(negrita);
 negrita.className = "green";
+
+// Apuntes
+
+/**
+ * --> Atributo HTML
+ * 
+ *  <etiqueta event="código JS">
+ * 
+ * - Eventos:
+ *  ·onclick
+ *  ·onmouseover
+ *  ·onkeydown
+ *  ·onload
+ * 
+ * --> Manejador Eventos
+ * 
+ *  elemento.addEventListener(evento,función_JS)
+ * 
+ * - Eventos:
+ *  ·clisk/dblclick
+ *  ·mouseover
+ *  ·Key down/Key up
+ *  ·DOMContentLeader / load
+ * 
+ */
+
+// Eventos ejemplo
+// Mediante atributo HTML
+
+// function cambiarTexto() {
+
+//     const texto = document.getElementById("salida");
+
+//     texto.textContent = "Texto cambiado";
+
+// };
+
+// Manejador de Eventos
+
+const texto = document.getElementsByClassName(".btn");
+
+texto.addEventListener("click", cambiarTexto);
+
+function cambiarTexto() {
+
+    texto.textContent = "Texto cambiado";
+
+};
