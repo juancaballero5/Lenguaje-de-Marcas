@@ -85,13 +85,13 @@ negrita.className = "green";
 // Eventos ejemplo
 // Mediante atributo HTML
 
-// function cambiarTexto() {
+function cambiarTexto() {
 
-//     const texto = document.getElementById("salida");
+    const texto = document.getElementById("salida");
 
-//     texto.textContent = "Texto cambiado";
+    texto.textContent = "Texto cambiado";
 
-// };
+};
 
 // Manejador de Eventos
 
@@ -104,3 +104,4 @@ function cambiarTexto() {
     texto.textContent = "Texto cambiado";
 
 };
+
