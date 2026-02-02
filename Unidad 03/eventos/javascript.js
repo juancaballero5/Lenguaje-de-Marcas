@@ -1,5 +1,5 @@
 "use strict";
-const nombre = "Sergio";
+const nombr= "Sergio";
 
 // Gestión de eventos
 // 1ª forma: atributo HTML (❌ no recomendable)
