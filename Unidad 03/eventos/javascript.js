@@ -1,67 +1,4 @@
 "use strict";
-const nombr= "Sergio";
-
-// Gestión de eventos
-// 1ª forma: atributo HTML (❌ no recomendable)
-
-// function saludar() {
-//     const texto = document.querySelector(".salida");
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// }
-
-// 2º forma: API JS setAttribute - Añadimos el atributo HTML
-// const boton = document.getElementById("btn");
-
-// boton.setAttribute("onclick","saludar()");
-// function saludar() {
-//     const texto = document.querySelector(".salida");
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// }
-
-// 3ª forma: addEventListener ✅ (la mejor)
-// const boton = document.getElementById("btn");
-// const texto = document.querySelector(".salida");
-
-// boton.addEventListener("click", () => {
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// });
-
-// Formas de pasar la función a addEventListener
-// A) Función definida aparte y pasar referencia (la “clásica”)
-// const boton = document.getElementById("btn");
-// const texto = document.querySelector(".salida");
-
-// function saludar() {
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// }
-
-// boton.addEventListener("click", saludar);
-
-// B) El error típico: poner () (se ejecuta al cargar, no al click)
-// boton.addEventListener("click", saludar());  //❌ MAL
-// boton.addEventListener("click", saludar);    //✅ BIEN
-
-// C) Función anónima (muy común)
-// boton.addEventListener("click", function () {
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// });
-
-// D) Función flecha (de las más usadas actualmente)
-// boton.addEventListener("click", () => {
-//     texto.textContent = `Salida: Hola ${nombre}`;
-// });
-
-// ¿Y si hace falta pasarle parámetros?
-// function suma(num1, num2) {
-//     texto.textContent = num1+num2;
-// }
-// boton.addEventListener("click", () => suma(4,6));
-
-// Variante con función anónima
-// boton.addEventListener("click", function () {
-//     suma(7,8);
-// });
-"use strict";
 const nombre = "Sergio";
 
 // Gestión de eventos
@@ -95,7 +32,7 @@ const nombre = "Sergio";
 // const texto = document.querySelector(".salida");
 
 // function saludar() {
-//     texto.textContent = `Salida: Hola ${nombre}`;
+//     texto.textContent = `Salida: Hola ${nombr}`;
 // }
 
 // boton.addEventListener("click", saludar);
@@ -124,3 +61,39 @@ const nombre = "Sergio";
 // boton.addEventListener("click", function () {
 //     suma(7,8);
 // });
+
+const boton = document.getElementById("btn");
+const botonReset = document.getElementById("btnReset");
+const texto = document.querySelector(".salida");
+let contador = 0;
+
+boton.addEventListener("click", () => {
+    contador ++;
+    if (contador < mensajes.length) {
+        salida.textContent = ` ${mensajes[contador]}`
+    } else {
+        contador = 0;
+        salida.textContent = ` ${mensajes[contador]}`
+    }
+});
+
+botonReset.addEventListener("click", () => {
+    contador = 0;
+    salida.textContent = `Salida: (aun nada)`
+});
+
+/**Mini-reto (avanzado): Combinar evento click + array para mostrar mensajes distintos
+ * segun el click.
+ * Cada click muestra el siguiente mansaje de un array.
+ * Cuando llegue al final, vuelve al principio(ciclico).
+ * Si reset, muestra mansaje "Salida: (aun nada)".
+ */
+
+const mensajes = [
+    "caca",
+    "Si llegas aqui caca",
+    "caca2",
+    "caca3",
+    "caca4"
+];
+
