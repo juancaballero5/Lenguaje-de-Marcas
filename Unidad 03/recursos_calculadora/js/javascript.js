@@ -1,3 +1,39 @@
+// Variable globales
+
+let valorActual = "0"; // Lo que se muestra - Lo que estoy escribiendo
+let valorAnterior = null; // Se usara para guardar el valor despues de pulsar + , - , * , /
+let operadorActual = null; // Se usara para cuando metamos operaciones de +, -, *, /
+let resultadoMostrado = false; // para saber si el usuario ha pulsado ya el =
+
+
+// Selecciono los elementos del DOM
+
+const pantalla = document.getElementById("pantalla");      // Pantalla
+// const botonesNumeros = Array.from(document.querySelectorAll(".boton"));       // NodeList de botones
+const botonesNumeros = [...document.querySelectorAll(".numero")];     // Convierte NodeList en Array  
+
+// Tengo que convertir el NodeList en Array
+
+
+// Elementos de click
+for (let i = 0; i < botonesNumeros.length; i++) {
+    botonesNumeros[i].addEventListener("click", function () {
+        mostrarNumeroPantalla(botonesNumeros[i].textContent)
+    });
+}
+
+// Igual pero con ForEach
+botonesNumeros.forEach(boton => {
+    botonesNumeros.addEventListener("click",function () {
+        mostrarNumeroPantalla(botonesNumeros[i].textContent)
+    }
+)});
+
+
+
+
+
+
 /**
  * @brief Ejecuta la inicialización de la calculadora una vez que el DOM está completamente cargado.
  *
@@ -42,7 +78,7 @@ function habilitarPunto(){
 *
 */
 function actualizarPantalla() {
-
+    pantalla.textContent = valorActual;
 }
 
 
@@ -59,7 +95,16 @@ function actualizarPantalla() {
  *
  */
 function mostrarNumeroPantalla(numero) { 
+    
+    if (resultadoMostrado) {
+        valorActual = numero;
+    } else if (valorActual === "0") {
+        valorActual = numero;
+    } else {
+        valorActual += numero;
+    }
 
+    actualizarPantalla();
 }
 
 /**
