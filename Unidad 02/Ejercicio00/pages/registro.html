@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="description" content ="Portal de videojuegos">
+    <link rel ="stylesheet" href ="../estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>GamneZone</title>
+</head>
+<body>
+    <header class="cabecera">
+        <div class ="brand">
+            <img src="../imagenes/gamezone-logo.png" alt="Logo de GameZone"class ="logo">
+        </div>
+        <h1 class="titulo">GameZone</h1>
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="registro.html" class = "activo">Registro</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="tarjeta">
+            <h2>Registro de usuario</h2>
+            <form action="registro.php" method="post" class="form-registro">
+                <!--    Fieldset : agrupar campos   -->
+
+                <fieldset>
+                    <!--    Legend: añade una etiqyeta a fieldset   -->
+                    <legend>Datos de usuario</legend>
+                    <!--Campo de texto-->
+                    <div class="form-row"> 
+                        <label for="name">Nombre de usuario:</label>
+                        <input type="text" name="nombre" id="name" required>
+                    </div>
+
+                    <!--Campode tipo email-->
+                    <div class="form-row"> 
+                        <label for="email">Email:</label>
+                        <input type="email" name="correo" id="email" placeholder="correo@example.com" required>
+                    </div>
+
+                    <legend>Otros datos </legend>
+                    <!-- Campo de tipo contraseña-->
+                    <div class="form-row"> 
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="clave" id="pass" minlength="6" maxlength="12" required>
+                    </div>
+
+                    <!-- Campo de tipo texto con patrón-->
+                    <div class="form-row"> 
+                        <label for="id">DNI/NIE:</label>
+                        <input type="text" name="documento-id" id="id" pattern="([X-Zx-z][0-9]{7}|[0-9]{8})[A-Za-z]" required>
+                    </div>
+
+                    <!--Campo de tipo numerico-->
+                    <div class="form-row"> 
+                        <label for="age">Edad:</label>
+                        <input type="number" name="age" id="age" min="0">
+                    </div>
+
+                    <!-- Botonera -->
+
+                    <div class="form-row">
+                        <button type="button">Registrar</button>
+                    </div>
+
+                </fieldset>
+    
+            </form>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>&copy; 2025GameZone. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>

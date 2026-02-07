@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="description" content ="Portal de videojuegos">
+    <link rel ="stylesheet" href ="../estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>GameZone</title>
+</head>
+<body class="layout-guias">
+    <header class="cabecera">
+        <div class ="brand">
+            <img src="../imagenes/gamezone-logo.png" alt="Logo de GameZone"class ="logo">
+        </div>
+        <h1 class="titulo">GameZone</h1>
+        
+    </header>
+
+    <div class="layout-guias-contenido">
+        <!-- Aqui va el menú lateral-->
+        <nav class="navegacion navega-lateral">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="guias.html" class="activo">Guías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="juegos.html"></a></li>
+            </ul>
+        </nav>
+        +-
+        <!-- AQUÍ DESPUES AÑADIREMOS EL MENU LATERAL + CONTENIDO-->
+        <main id="contenido-principal" class="guias">
+            <h1>Guías y tutoriales</h1>
+            <p>Aqui encontraras una selección de videos con guías, trucos y 
+                tutoriales
+            </p>
+
+            <section class="guias-videos">
+                <h2>Primer video de prueba</h2>
+
+                <!-- Contenedor grid de videos-->
+                <div class="guias-grid">
+                    <!-- Video(item) 1 -->
+                    <article class="guia-video">
+    
+                        <h3>Gruía 1:God of War</h3>
+                        
+                        <iframe 
+                        src="https://www.youtube.com/embed/LFeLNRLQh0c"
+                        title="Guía 1: God Of War"
+                        loading = "lazy"
+                        referrerpolicy="Strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                        
+                        <!--src ->URL del contenido embebido (formato https://www.youtube.com/embed/ ... ).
+                            title -> importante para accesibilidad (describe qué se ve).
+                            width / height -> tamaño en pixeles (luego lo controlaremos con CSS).
+                            loading="lazy" -> no carga el iframe hasta que hace falta (optimiza).
+                            referrerpolicy="strict-origin-when-cross-origin" -> menos informacion enviada al servidor externo
+                            allowfullscreen -> permite que el video se vea a pantalla completa. 
+                        -->
+                    </article>
+
+                    <!-- Video(item) 2 -->
+                    <article class="guia-video">
+    
+                        <h3>Gruía 2:Fortnite</h3>
+                        
+                        <iframe 
+                        src="https://www.youtube.com/embed/sw0WfaWYwa8"
+                        title="Guía 2:Fortnite"
+                        loading = "lazy"
+                        referrerpolicy="Strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                    </article>
+
+                    <!-- Video(item) 3 -->
+                    <article class="guia-video">
+    
+                        <h3>Gruía 3:Mario Kart</h3>
+                        
+                        <iframe 
+                        src="https://www.youtube.com/embed/jXSsuyf6mKY"
+                        title="Guía 3: God Of War"
+                        loading = "lazy"
+                        referrerpolicy="Strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                    </article>
+
+                    <!-- Video(item) 4 -->
+                    <article class="guia-video">
+    
+                        <h3>Gruía 4:Counter Strike</h3>
+                        
+                        <iframe 
+                        src="https://www.youtube.com/embed/BlgCbcGlYLU"
+                        title="Guía 4:Counter Strike"
+                        loading = "lazy"
+                        referrerpolicy="Strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                    </article>
+                    
+                </div>
+                
+            </section>
+        </main>
+    </div>
+
+    <footer class="pie">
+        <p>&copy; 2025GameZone. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>
