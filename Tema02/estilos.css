@@ -6,6 +6,7 @@
 html,body {
     height : 100%;
 }
+
 /*Configuracion general:
 -Quitamos los márgenes por dofectro
 -Elegimos una tipografia base
@@ -20,6 +21,7 @@ body{
     flex-direction: column;
     min-height: 100vh;    /*  Altura total del viewport */
 }
+
 /*Cabecera centrada y con espacio de relleno (padding)*/
 .cabecera{
     text-align: center;
@@ -57,6 +59,13 @@ body{
     font-weight: bold;
 }
 
+/* Enlace activo del menú (página actual) */
+.menu a.activo {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 0.2rem;
+}
+
 /*Efecto hover para los enlaces*/
 .menu a:hover{
     background-color: #fff;
@@ -66,9 +75,10 @@ body{
 /*Titulo de la cabecera sin margenes extra y color destacado*/
 
 .titulo{
-    margin: 0%;
+    margin: 0;
     color: #2C3E50;
 }
+
 /*Zona principal(main) le ponemos un poco de padding(es el relleno) */
 
 #contenido-principal{
@@ -83,7 +93,7 @@ body{
 /*clase "tarjeta": usada para agrupar secciones siaulmente
     -color blanco
     -borde sutil y redondeado por las esquinas
-    -sombre ligera
+    -sombra ligera
     -ancho maximo controlado
 
 */
@@ -97,6 +107,8 @@ body{
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0,0,0,10);
 }
+
+/*Texto secundario*/
 .aviso{
     color:#7f8c8d
 }
@@ -194,6 +206,35 @@ body{
     font-size: 14px;
 }
 
+/* ==================
+   SECCION CONTACTO
+   ==================
+*/
+
+.contacto-ubicacion {
+    margin-top: 2rem;
+    /* height: 1000px; */
+}
+
+.mapa-contenedor {
+    margin-top: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Esto equivale a */
+        /* margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto; */
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 350px;
+    /* aspect-ratio: 16 / 9; */
+    border: 0;
+    border-radius: 8px;    
+}
+
 /*================
 SECCIÓN TIENDA
 ==================*/
@@ -214,7 +255,7 @@ SECCIÓN TIENDA
 /* Card individual*/
 
 .card{
-    width: 280px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -245,7 +286,7 @@ SECCIÓN TIENDA
 .card-descripcion {
     font-size: 0.9rem;
     color: #666;
-    
+    min-height: 3.5em;  /* Mantiene altura uniforme aunque cambie el texto */
 }
 
 .card-precio {
@@ -280,7 +321,8 @@ PRACTICA GRID
 
 .contenedor-grid {
     display: grid;   /* Activamos Grid */
-    /*grid-template-columns: 200px 200px 200px; /* 3 columnas exactas */
+    /* 3 columnas exactas */
+    /*grid-template-columns: 200px 200px 200px; 
     /*grid-template-columns: repeat(3,200px);*/
     /*grid-template-rows: 100px 100px 100px ;   /* 2 filas exactas */
     /*gap: 10px ;                           /*Espacio uniforme entre filas y columnas*/
@@ -352,6 +394,8 @@ PRACTICA GRID
     gap: 16px;
 }
 
+/* GRID POR AREAS */
+
 .contenedor-areas{
     display: grid;
     min-height: 400px;
@@ -386,3 +430,166 @@ PRACTICA GRID
     background-color: blue;
 }
 
+/* ========================
+   SECCION JUEGOS
+   ========================
+*/
+
+.tarjeta.juegos {
+    width: min(1700px, 95%);
+}
+
+/* Catálogo de juegos enfoque ESCRITORIO FIRST */
+.lista-cards--grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card-destacada {
+    /* grid-column: span 2; */
+    background-color: #82d2e5;
+    border: 2px solid red;
+}
+
+/* ================================================
+   SECCION GUIAS (diferente estructura al resto)
+   ================================================
+*/
+.guias h1 {
+    margin-top: 0;
+}
+
+.guias-videos {
+    margin-top: 2rem;
+}
+
+.guias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cada guía individual */
+.guia-video h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste de los iframes */
+.guia-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* Mantiene el formato panorámico */
+    border: 0;
+    border-radius: 8px;
+}
+
+/* ===== Layout especial para la página de Guías ===== */
+
+/* Contenedor principal: menú lateral + contenido en fila */
+.layout-guias .layout-guias-contenido {
+    display: flex;
+    flex: 1;
+}
+
+/* Menú lateral */
+.layout-guias .navega-lateral {
+    background: #34495E;
+    padding: 1rem 0.5rem;
+    min-width: 200px;
+}
+
+/* Menú en columna solo en la página de Guías */
+.layout-guias .navega-lateral .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Enlaces del menú lateral ocupan todo el ancho */
+.layout-guias .navega-lateral .menu a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+.layout-guias .navega-lateral .menu a:hover {
+    background: #2C3E50;
+    color: #E74C3C;
+}
+
+/* El main se expande para ocupar el resto del espacio */
+.layout-guias #contenido-principal {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* =========================
+    SECCION NOTICIAS
+    TARJETAS DE VÍDEO Y AUDIO
+   ========================= */
+.video-card,
+.audio-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;   /* superior 10px */
+    margin-bottom: 0;   /* inferior 0 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-card h2,
+.audio-card h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Vídeos y audios */
+video,
+audio {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 10px auto; /* centrado, margen inferior 10px */
+    border-radius: 5px;
+}
+
+/* Iframe del vídeo de YouTube */
+.video-card iframe {
+    display: block;
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+}
+
+
+/* VERSION MOVILES */
+/* @media (width < 768px ) {}*/
+@media screen and (width < 768px){
+    .tienda.juegos {
+        width: 95%;
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: minmax(220px, 1fr);
+    }
+}
+
+/* VERSION TABLET */
+/* @media (768px <= width < 1024px) {}*/
+@media screen and (768px <= width < 1024px){
+    .tienda.juegos {
+        width: min(1000px, 95%);
+    }
+
+    /* Una sola columna de juegos */
+    .lista-cards--grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
