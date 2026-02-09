@@ -11,6 +11,9 @@ let resultadoMostrado = false; // para saber si el usuario ha pulsado ya el =
 const pantalla = document.getElementById("pantalla");      // Pantalla
 // const botonesNumeros = Array.from(document.querySelectorAll(".boton"));       // NodeList de botones
 const botonesNumeros = [...document.querySelectorAll(".numero")];     // Convierte NodeList en Array  
+const botonesOperadores = [...document.querySelectorAll(".operacion")];    // Conviertes los botones de operacion en Array
+const botonIgual = document.getElementById("igual");
+
 
 // Tengo que convertir el NodeList en Array
 
@@ -30,7 +33,15 @@ botonesNumeros.forEach(boton => {
 )});
 
 
+// Conectar a los botones con el evento click
+botonesOperadores.forEach(boton => {
+    boton.addEventListener("click",function () {
+        manejarOperador(boton.textContent)
+    }
+)});
 
+// Manejo el evente al pulsar el boton "="
+botonIgual.addEventListener("click",calcularOperacion);
 
 
 
@@ -125,11 +136,14 @@ function mostrarPuntoPantalla() {
  *
  * - Se guarda la operación matemática seleccionada para luego aplicarla.
  * - Se guarda el número que había escrito en la pantalla.
- * - Se resetea la pantalla volviendo a poner el número a 0.
+ * - Se resetea el valor actual y la pantalla esta a la espera de un nuevo numero.
  *
  */
 function manejarOperador(operador) { 
-
+    operadorActual = operador;
+    valorAnterior = valorActual;
+    valorActual = "0";
+    resultadoMostrado = false;
 }
 
 /**
@@ -140,6 +154,42 @@ function manejarOperador(operador) {
  *
  */
 function calcularOperacion() { 
+    let num1 = parseFloat(valorAnterior);
+    let num2 = parseFloat(valorActual);
+    let resultado;
+
+    if (valorActual == null || valorAnterior == null) return;
+    
+    switch (operadorActual) {
+        case "+":
+            resultado = num1 + num2;
+
+            break;
+    
+        case "-":
+            resultado = num1 - num2;
+            break;
+    
+        case "x":
+            resultado = num1 * num2;
+            break;
+    
+        case "/":
+            if (num2 === 0) {
+                valorActual = "Error";
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+    
+        default:
+            break;
+    }
+
+    valorActual = resultado.toString();
+    resultadoMostrado = true;
+    // TODO: Aplicar color de resultado
+    actualizarPantalla();
 
 }
 
