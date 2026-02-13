@@ -158,28 +158,36 @@ function calcularOperacion() {
     let num2 = parseFloat(valorActual);
     let resultado;
 
+    pantalla.className;                                  // "pantalla color-normal"
+    const classPantalla = pantalla.document.split(" ");  // ["pantalla", "color-normal"]
+
     if (valorActual == null || valorAnterior == null) return;
     
     switch (operadorActual) {
         case "+":
             resultado = num1 + num2;
-
+            classPantalla = "color-suma"
             break;
     
         case "-":
             resultado = num1 - num2;
+            classPantalla = "color-resta"
             break;
     
         case "x":
             resultado = num1 * num2;
+            classPantalla = "color-multiplicacion"
             break;
     
         case "/":
             if (num2 === 0) {
                 valorActual = "Error";
+                classPantalla = "color-error"
+                pantalla.className = classPantalla.join(" ");      // "pantalla color-x"
                 return;
             }
             resultado = num1 / num2;
+            classPantalla = "color-division"
             break;
     
         default:
@@ -189,6 +197,7 @@ function calcularOperacion() {
     valorActual = resultado.toString();
     resultadoMostrado = true;
     // TODO: Aplicar color de resultado
+    pantalla.className = classPantalla.join(" ");      // "pantalla color-x"
     actualizarPantalla();
 
 }
