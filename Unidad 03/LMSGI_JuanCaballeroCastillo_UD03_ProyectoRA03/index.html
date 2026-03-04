@@ -16,41 +16,44 @@
 
     <main>
 
+        <!-- Panel de arriba -->
         <div class="paneles-arriba">
+
             <section class="panel-seleccion-jugada ">
+
                 <h2>Elige tu jugada</h2>
 
                 <!-- Elección -->
-                <section class="contenedor-elecciones-juego">
+                <section class="contenedor-elecciones-juego ">
 
                     <!-- Piedra -->
                     
-                    <button class="boton-eleccion-jugada"> 
+                    <button class="boton-eleccion-jugada" id="piedra"> 
                         <div class="icono-jugada">🪨</div>
                         <span>Piedra</span> 
                     </button>
                     
         
                     <!-- Papel -->
-                    <button class="boton-eleccion-jugada"> 
+                    <button class="boton-eleccion-jugada" id="papel"> 
                         <div class="icono-jugada">📋</div>
                         <span>Papel</span> 
                     </button>
 
                     <!-- Tijera -->
-                    <button class="boton-eleccion-jugada"> 
+                    <button class="boton-eleccion-jugada" id="tijera"> 
                         <div class="icono-jugada">✂️</div>
                         <span>Tijera</span> 
                     </button>
         
                     <!-- Lagarto -->
-                    <button class="boton-eleccion-jugada"> 
+                    <button class="boton-eleccion-jugada" id="lagarto"> 
                         <div class="icono-jugada">🦎</div>
                         <span>Lagarto</span> 
                     </button>
         
                     <!-- Spock -->
-                    <button class="boton-eleccion-jugada"> 
+                    <button class="boton-eleccion-jugada" id="spock"> 
                         <div class="icono-jugada">🖖</div>
                         <span>Spock</span> 
                     </button>
@@ -68,6 +71,9 @@
                     <!-- Jugador -->
                     <div class="jugador etiqueta-jugador">
                         <p>Tú</p>
+                        <div class="mostrar-jugada">
+                            <p class="placeholder">?</p>
+                        </div>
                     </div>
 
                     
@@ -78,6 +84,9 @@
                     <!-- CPU -->
                     <div class="jugador etiqueta-jugador">
                         <p>CPU</p>
+                        <div class="mostrar-jugada">
+                            <p class="placeholder">?</p>
+                        </div>
                     </div>
                     
                 </section>
@@ -86,8 +95,45 @@
     
         </div>
 
-        <!-- Estadisticas -->
-        <div class="paneles-abajo estadisticas"></div>
+
+        <div class="contenedor-resultado">
+
+            <section class="resultados">
+
+                <p></p>
+    
+                <section class="etiqueta-estadistica">
+        
+                    <!-- Estadisticas -->
+                    
+                        <section class="estadisticas-juego">
+        
+                            <div class="panel-estadistica victorias">
+                                <p>Victorias</p>
+                                <p class="valor-estadistica">0</p>
+                            </div>
+            
+                            <div class="panel-estadistica derrotas">
+                                <p>Derrotas</p>
+                                <p class="valor-estadistica">0</p>
+                            </div>
+            
+                            <div class="panel-estadistica empates">
+                                <p>Empates</p>
+                                <p class="valor-estadistica">0</p>
+                            </div>
+        
+                        </section>
+        
+                </section>
+                
+            </section>
+
+
+        </div>
+
+
+
 
     </main>
     <footer>
@@ -96,7 +142,7 @@
         </p>
 
         <p>
-            Proyecto realizado por:<strong>Juan Caballero Castillo</strong> (Declaro que no he usado IA en el proyecto) 
+            Proyecto realizado por: <strong>Juan Caballero Castillo</strong> (Declaro que no he usado IA en el proyecto) 
         </p>
     </footer>
 
