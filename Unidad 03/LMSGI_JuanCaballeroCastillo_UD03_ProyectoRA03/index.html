@@ -16,54 +16,75 @@
 
     <main>
 
-        <section class="paneles-arriba">
+        <div class="paneles-arriba">
+            <section class="panel-seleccion-jugada ">
+                <h2>Elige tu jugada</h2>
 
-            <!-- Elección -->
-            <div class="contenedor-elecciones-juego eleccion">
-    
-                <!-- Piedra -->
-                
-                <button class="boton-eleccion-jugada boton-eleccion-jugada piedra"> Piedra (🪨) </button>
-                
-    
-                <!-- Papel -->
-                <div>
-                    <button class="boton-eleccion-jugada boton-eleccion-jugada papel">Papel (📋)</button>
-                </div>
-    
-                <!-- Tijera -->
-                <div>
-                    <button class="boton-eleccion-jugada boton-eleccion-jugada tijera"> Tijera (✂️) </button>
-                </div>
-    
-                <!-- Lagarto -->
-                <div>
-                    <button class="boton-eleccion-jugada boton-eleccion-jugada lagarto">Lagarto (🦎) </button>
-                </div>
-    
-                <!-- Spock -->
-                <div>
-                    <button class="boton-eleccion-jugada boton-eleccion-jugada spock">Spock(🖖)</button>
-                </div>
-                
-            </div>
+                <!-- Elección -->
+                <section class="contenedor-elecciones-juego">
+
+                    <!-- Piedra -->
+                    
+                    <button class="boton-eleccion-jugada"> 
+                        <div class="icono-jugada">🪨</div>
+                        <span>Piedra</span> 
+                    </button>
+                    
+        
+                    <!-- Papel -->
+                    <button class="boton-eleccion-jugada"> 
+                        <div class="icono-jugada">📋</div>
+                        <span>Papel</span> 
+                    </button>
+
+                    <!-- Tijera -->
+                    <button class="boton-eleccion-jugada"> 
+                        <div class="icono-jugada">✂️</div>
+                        <span>Tijera</span> 
+                    </button>
+        
+                    <!-- Lagarto -->
+                    <button class="boton-eleccion-jugada"> 
+                        <div class="icono-jugada">🦎</div>
+                        <span>Lagarto</span> 
+                    </button>
+        
+                    <!-- Spock -->
+                    <button class="boton-eleccion-jugada"> 
+                        <div class="icono-jugada">🖖</div>
+                        <span>Spock</span> 
+                    </button>
+                    
+                </section>
+            </section>
     
             <!-- Batalla -->
-            <div class="batalla">
+            <section class="panel-batalla">
+
+                <h2>Batalla</h2>
     
-                <!-- Jugador -->
-                <div>
+                <section class="contenedor-jugadores">
+
+                    <!-- Jugador -->
+                    <div class="jugador etiqueta-jugador">
+                        <p>Tú</p>
+                    </div>
+
+                    
+                    <div class="vs-circle">
+                        <p>VS</p>
+                    </div>
+                    
+                    <!-- CPU -->
+                    <div class="jugador etiqueta-jugador">
+                        <p>CPU</p>
+                    </div>
+                    
+                </section>
     
-                </div>
+            </section>
     
-                <!-- CPU -->
-                <div>
-    
-                </div>
-    
-            </div>
-    
-        </section>
+        </div>
 
         <!-- Estadisticas -->
         <div class="paneles-abajo estadisticas"></div>
