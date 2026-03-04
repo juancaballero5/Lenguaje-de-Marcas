@@ -3,64 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display =swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos .css">
     <link rel="icon" href="imagenes/spock-hand-gesture.svg">
     <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
 </head>
 <body>
-    <header class = "">
-        <h1>Piedra · Papel · Tijera · Lagarto ·Spock</h1>
-        <p>El juego definitivo</p>
+    <header>
+        <h2 class="titulo-juego"> Piedra · Papel · Tijera · Lagarto · Spock</h2>
+        <p class="subtitulo-juego">El juego definitivo</p>
     </header>
+
     <main>
 
-        <!-- Elección -->
-        <div class="eleccion">
+        <section class="paneles-arriba">
 
-            <!-- Piedra -->
-            <div>
-                <button class="piedra"> Piedra ( ) </button>
+            <!-- Elección -->
+            <div class="contenedor-elecciones-juego eleccion">
+    
+                <!-- Piedra -->
+                
+                <button class="boton-eleccion-jugada boton-eleccion-jugada piedra"> Piedra (🪨) </button>
+                
+    
+                <!-- Papel -->
+                <div>
+                    <button class="boton-eleccion-jugada boton-eleccion-jugada papel">Papel (📋)</button>
+                </div>
+    
+                <!-- Tijera -->
+                <div>
+                    <button class="boton-eleccion-jugada boton-eleccion-jugada tijera"> Tijera (✂️) </button>
+                </div>
+    
+                <!-- Lagarto -->
+                <div>
+                    <button class="boton-eleccion-jugada boton-eleccion-jugada lagarto">Lagarto (🦎) </button>
+                </div>
+    
+                <!-- Spock -->
+                <div>
+                    <button class="boton-eleccion-jugada boton-eleccion-jugada spock">Spock(🖖)</button>
+                </div>
+                
             </div>
-
-            <!-- Papel -->
-            <div>
-                <button class="papel">Papel ( )</button>
+    
+            <!-- Batalla -->
+            <div class="batalla">
+    
+                <!-- Jugador -->
+                <div>
+    
+                </div>
+    
+                <!-- CPU -->
+                <div>
+    
+                </div>
+    
             </div>
-
-            <!-- Tijera -->
-            <div>
-                <button class="tijera"> Tijera ( ) </button>
-            </div>
-
-            <!-- Lagarto -->
-            <div>
-                <button class="lagarto">Lagarto ( ) </button>
-            </div>
-
-            <!-- Spock -->
-            <div>
-                <button class="spock">Spock( )</button>
-            </div>
-            
-        </div>
-
-        <!-- Batalla -->
-        <div class="batalla">
-
-            <!-- Jugador -->
-            <div>
-
-            </div>
-
-            <!-- CPU -->
-            <div>
-
-            </div>
-
-        </div>
+    
+        </section>
 
         <!-- Estadisticas -->
-        <div class="estadisticas"></div>
+        <div class="paneles-abajo estadisticas"></div>
 
     </main>
     <footer>
