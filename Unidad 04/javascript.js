@@ -12,3 +12,5 @@ const usuario = {
 
 // Pasar de objeto JS a JSON
 const textoJSON = JSON.stringify(alumno);
+console.log(textoJSON);
+
