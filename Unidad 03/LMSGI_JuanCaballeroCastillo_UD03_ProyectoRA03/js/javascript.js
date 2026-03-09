@@ -1,17 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    /**
-    * @brief Inicializa el juego configurando los elementos, estados y eventos necesarios.
-    *
-    * Esta función prepara todo lo necesario para que el juego pueda comenzar,
-    * incluyendo la configuración de la interfaz, los valores iniciales de los
-    * jugadores y la vinculación de eventos a los controles.
-    *
-    * @return {void} No devuelve ningún valor.
-    */
-    function inicializarJuego() {
+    const jugadas = ["piedra","papel","tijera","lagarto", "spock"];
 
+    // Variables
+    let eleccion; 
+    let resultado; 
+    let victorias = 0; 
+    let derrotas = 0;
+    let empates = 0;
+    
+    const Gana = {
+        piedra:["tijeras", "lagarto"],
+        papel:["piedra","spock"],
+        tijeras:["papel","lagarto"],
+        lagarto:["spock","papel"],
+        spock:["tijeras","piedra"]
     }
+    
+    const jugador = document.getElementById("eleccion-jugador"); 
+    const cpu = document.getElementById("eleccion-CPU");
+
+    const contadorVictorias = document.getElementById("victorias");
+    const contadorDerrotas = document.getElementById("derrotas");
+    const contadorEmpates = document.getElementById("empates");
+    
+    const botones = [...document.querySelectorAll(".boton-eleccion-jugada")];
+    
+    jugar();
 
 
     /**
@@ -24,11 +39,27 @@ document.addEventListener("DOMContentLoaded", function() {
     * 4. Calcula el resultado de la ronda.
     * 5. Muestra el resultado y actualiza los contadores correspondientes.
     *
-    * @param {string} eleccionUsuario - La elección realizada por el usuario (por ejemplo: "piedra", "papel", "tijera"...).
     * @return {void} No devuelve ningún valor.
     */
-    function jugar(eleccionUsuario) {
-    
+    function jugar() {
+
+        for (let i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("click", function () {
+            mostrarEleccion(jugadas[i])
+            eleccion = obtenerEleccionCPU();
+
+            if (Object.values(Gana[jugadas[i]]).includes(eleccion)) {
+                resultado = "victoria";
+            } else if (Object.values(Gana[eleccion]).includes(jugadas[i])) {
+                resultado = "derrota";;
+            } else {
+                resultado = "empate";
+            }
+
+            mostrarResultadoJugada(resultado);
+        });
+}
+
     }
 
     /**
@@ -40,6 +71,44 @@ document.addEventListener("DOMContentLoaded", function() {
     */
     function obtenerEleccionCPU() {
 
+        let jugada;
+        const eleccionCPU = Math.floor(Math.random() * 6 );
+
+        switch (eleccionCPU) {
+            case 1:
+            
+                jugada = "piedra";
+                cpu.textContent = "🪨"
+
+                break;
+            case 2:
+                
+                jugada = "papel";
+                cpu.textContent = "📋"
+
+                break;
+            case 3:
+                
+                jugada = "tijera";
+                cpu.textContent = "✂️"
+
+                break;
+            case 4:
+                
+                jugada = "lagarto";
+                cpu.textContent = "🦎"
+
+                break;
+            case 5:
+                
+                jugada = "spock";
+                cpu.textContent = "🖖"
+
+            break;
+        
+        }
+
+        return jugada;
     }
 
     /**
@@ -49,12 +118,30 @@ document.addEventListener("DOMContentLoaded", function() {
     * para animación/estilo y agrega los elementos que representan
     * la jugada seleccionada (emoji y texto) del jugador indicado.
     *
-    * @param {HTMLElement} display - El contenedor donde se mostrará la elección.
     * @param {string} eleccion - La clave de la elección (por ejemplo: "piedra", "papel", "tijera"...).
-    * @param {string} jugador - Nombre del jugador que realizó la elección (por ejemplo: "JUGADOR" o "CPU").
     * @return {void} No devuelve ningún valor.
     */
-    function mostrarEleccion(display, eleccion, jugador) {
+    function mostrarEleccion(eleccion) {
+
+            
+        switch (eleccion) {
+            case "piedra":
+                jugador.textContent = "🪨"
+                break;
+            case "papel":
+                jugador.textContent = "📋"
+                break;
+            case "tijera":
+                jugador.textContent = "✂️"
+                break;
+            case "lagarto":
+                jugador.textContent = "🦎"
+                break;
+            case "spock":
+                jugador.textContent = "🖖"
+                break;
+
+            }
 
     }
 
@@ -70,43 +157,26 @@ document.addEventListener("DOMContentLoaded", function() {
     * @param {string} cpu - Elección de la CPU (por ejemplo: "piedra", "papel", "tijera"...).
     * @return {void} No devuelve ningún valor.
     */
-    function mostrarResultadoJugada(resultado, usuario, cpu) {
+    function mostrarResultadoJugada(resultado) {
+
+        if(resultado == "victoria") {
+            victorias++;
+        } else if (resultado == "derrota") {
+            derrotas++;
+        } else if (resultado == "empate") {
+            empates++;
+        }
+
+        contadorVictorias.textContent = victorias;
+        contadorDerrotas.textContent = derrotas;
+        contadorEmpates.textContent = empates;
 
     }
-
-    /**
-    * @brief Actualiza los contadores de victorias, derrotas y empates en la interfaz.
-    *
-    * Esta función refleja los valores actuales de las variables globales
-    * `victorias`, `derrotas` y `empates` en los elementos del DOM correspondientes.
-    *
-    * @return {void} No devuelve ningún valor.
-    */
-    function actualizarContadores() {
-
-    }
-
-    /**
-    * @brief Inicializa los tooltips de los botones de elección.
-    *
-    * Esta función recorre todos los botones de elección, obtiene la jugada
-    * asociada a cada uno y configura el atributo `title` para mostrar
-    * un tooltip indicando qué opciones vence esa jugada.
-    *
-    * @return {void} No devuelve ningún valor.
-    */
-    function inicializarTooltips() {
-    
-    }
-
 
     // Efecto de carga inicial suave
     setTimeout(() => {
         const contenedor = document.querySelector('main');
         if (contenedor) contenedor.style.opacity = '1';
     }, 100);
-
-
-
 
 });

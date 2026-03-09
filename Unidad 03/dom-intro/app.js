@@ -75,7 +75,7 @@ negrita.className = "green";
  *  elemento.addEventListener(evento,función_JS)
  * 
  * - Eventos:
- *  ·clisk/dblclick
+ *  ·click/dblclick
  *  ·mouseover
  *  ·Key down/Key up
  *  ·DOMContentLeader / load

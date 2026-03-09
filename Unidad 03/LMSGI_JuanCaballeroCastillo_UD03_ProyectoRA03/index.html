@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Caballero Castillo">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display =swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos .css">
     <link rel="icon" href="imagenes/spock-hand-gesture.svg">
@@ -28,34 +29,34 @@
 
                     <!-- Piedra -->
                     
-                    <button class="boton-eleccion-jugada" id="piedra"> 
+                    <button class="boton-eleccion-jugada piedra" id="boton" data-eleccion = ""> 
                         <div class="icono-jugada">🪨</div>
-                        <span>Piedra</span> 
+                        <span id="piedra">Piedra</span> 
                     </button>
                     
         
                     <!-- Papel -->
-                    <button class="boton-eleccion-jugada" id="papel"> 
+                    <button class="boton-eleccion-jugada papel" id="boton"> 
                         <div class="icono-jugada">📋</div>
-                        <span>Papel</span> 
+                        <span id="papel">Papel</span> 
                     </button>
 
                     <!-- Tijera -->
-                    <button class="boton-eleccion-jugada" id="tijera"> 
+                    <button class="boton-eleccion-jugada tijera" id="boton"> 
                         <div class="icono-jugada">✂️</div>
-                        <span>Tijera</span> 
+                        <span id="lagarto">Tijera</span> 
                     </button>
         
                     <!-- Lagarto -->
-                    <button class="boton-eleccion-jugada" id="lagarto"> 
+                    <button class="boton-eleccion-jugada lagarto" id="boton"> 
                         <div class="icono-jugada">🦎</div>
-                        <span>Lagarto</span> 
+                        <span id="lagarto">Lagarto</span> 
                     </button>
         
                     <!-- Spock -->
-                    <button class="boton-eleccion-jugada" id="spock"> 
+                    <button class="boton-eleccion-jugada spock" id="boton"> 
                         <div class="icono-jugada">🖖</div>
-                        <span>Spock</span> 
+                        <span id="spock">Spock</span> 
                     </button>
                     
                 </section>
@@ -71,8 +72,8 @@
                     <!-- Jugador -->
                     <div class="jugador etiqueta-jugador">
                         <p>Tú</p>
-                        <div class="mostrar-jugada">
-                            <p class="placeholder">?</p>
+                        <div class="mostrar-jugada" id="div-jugador">
+                            <p class="placeholder" id="eleccion-jugador">?</p>
                         </div>
                     </div>
 
@@ -84,8 +85,8 @@
                     <!-- CPU -->
                     <div class="jugador etiqueta-jugador">
                         <p>CPU</p>
-                        <div class="mostrar-jugada">
-                            <p class="placeholder">?</p>
+                        <div class="mostrar-jugada" id="div-cpu">
+                            <p class="placeholder" id="eleccion-CPU">?</p>
                         </div>
                     </div>
                     
@@ -100,7 +101,8 @@
 
             <section class="resultados">
 
-                <p></p>
+                <h2 class="mensaje-estadisticas">Estadisticas</h2>
+
     
                 <section class="etiqueta-estadistica">
         
@@ -108,19 +110,19 @@
                     
                         <section class="estadisticas-juego">
         
-                            <div class="panel-estadistica victorias">
+                            <div class="panel-estadistica">
                                 <p>Victorias</p>
-                                <p class="valor-estadistica">0</p>
+                                <p class="valor-estadistica" id="victorias">0</p>
                             </div>
             
-                            <div class="panel-estadistica derrotas">
+                            <div class="panel-estadistica">
                                 <p>Derrotas</p>
-                                <p class="valor-estadistica">0</p>
+                                <p class="valor-estadistica" id="derrotas">0</p>
                             </div>
             
                             <div class="panel-estadistica empates">
                                 <p>Empates</p>
-                                <p class="valor-estadistica">0</p>
+                                <p class="valor-estadistica" id="empates" >0</p>
                             </div>
         
                         </section>
