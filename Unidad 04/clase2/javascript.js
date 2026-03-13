@@ -46,7 +46,7 @@ btnCargar.addEventListener("click", () => {
                 <small>${user.phone} </small>
                 `
                 lista.appendChild(card);
-            }
+            }º
         })
         .catch((err) => {
             // 7) Si hay error de red o un throw anterior, acabamos aqui
