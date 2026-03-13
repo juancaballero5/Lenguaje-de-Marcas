@@ -28,7 +28,7 @@ boton.addEventListener("click", () => {
             //=============== APUNTES ========================
             // LA PROPIEDAD ARRAY COMPRUEBA SI LO QUE ESTA EN PARENTESIS ES UN ARRAY O NO
 
-            if (Array.isArray(data) ||data.length=== 0 || !data[0].url) {
+            if (Array.isArray(data) === false || data.length === 0 || !data[0].url) {
                 throw new Error("Datos en formato inesperado: no se  encontró la imagen.")
             }
 
@@ -37,7 +37,7 @@ boton.addEventListener("click", () => {
             const img = document.createElement("img");
             img.src = urlImagen;
             img.alt = "Imagen de un perrete";
-            img.className = "imgaenanimal";
+            img.className = "imagenanimal";
 
             // Reseteo el contenedor de la imagen 
             imagen.innerHTML = "";
@@ -45,6 +45,6 @@ boton.addEventListener("click", () => {
 
         })
         .catch (error => {
-            mensaje.innerHTMLt = `<p class = "mensaje">Ha fallado la carga de imagen ${error.message} </p>`
+            mensaje.textContent = `Ha fallado la carga de imagen ${error.message}`;
         })
 })
