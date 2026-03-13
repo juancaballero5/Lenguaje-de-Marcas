@@ -32,7 +32,7 @@ const nombre = "Sergio";
 // const texto = document.querySelector(".salida");
 
 // function saludar() {
-//     texto.textContent = `Salida: Hola ${nombr}`;
+//     texto.textContent = `Salida: Hola ${nombre}`;
 // }
 
 // boton.addEventListener("click", saludar);

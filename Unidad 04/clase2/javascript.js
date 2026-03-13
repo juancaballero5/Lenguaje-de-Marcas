@@ -50,6 +50,9 @@ btnCargar.addEventListener("click", () => {
         })
         .catch((err) => {
             // 7) Si hay error de red o un throw anterior, acabamos aqui
+            estado.textContent = "Error cargando usuarios";
+            estado.className = "error";
+            console.error(err);
         })
 
 });
