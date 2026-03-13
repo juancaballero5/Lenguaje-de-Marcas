@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let victorias = 0; 
     let derrotas = 0;
     let empates = 0;
-    
+
     const Gana = {
         piedra:["tijeras", "lagarto"],
         papel:["piedra","spock"],
@@ -16,16 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
         lagarto:["spock","papel"],
         spock:["tijeras","piedra"]
     }
-    
+
     const jugador = document.getElementById("eleccion-jugador"); 
     const cpu = document.getElementById("eleccion-CPU");
 
     const contadorVictorias = document.getElementById("victorias");
     const contadorDerrotas = document.getElementById("derrotas");
     const contadorEmpates = document.getElementById("empates");
-    
+
     const botones = [...document.querySelectorAll(".boton-eleccion-jugada")];
-    
+
     jugar();
 
 
@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function() {
             case "spock":
                 jugador.textContent = "🖖"
                 break;
-
             }
 
     }
