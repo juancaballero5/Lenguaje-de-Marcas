@@ -147,6 +147,13 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+.imagen-personaje{
+    width: max(650px);
+    height: max(400px);
+    border-radius: 12px;
+
+}
+
 .pie{
     text-align: center;
     align-items: center;

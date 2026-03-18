@@ -16,28 +16,27 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!response.ok) {
                 throw new Error("Código de error HTTP: " + response.status);
             }
-            
+
             return response.json();
         })
         .then(data => {
 
-            //=============== APUNTES ========================
-            // LA PROPIEDAD ARRAY COMPRUEBA SI LO QUE ESTA EN PARENTESIS ES UN ARRAY O NO
+            // console.log(data);
 
             if (!typeof data === "object" && data === null && Array.isArray(data)) {
                 throw new Error("Datos en formato inesperado: no se  encontró la imagen.")
             }
 
-            const urlImagen = data;
+            const url = new URL(ENDPOINT + "character/avatar/" +  Math.floor(Math.random() * 827)+ ".jpeg");
 
             const img = document.createElement("img");
-            img.src = urlImagen;
-            img.alt = "Imagen de un perrete";
-            img.className = "imagenanimal";
+            img.src = url;
+            img.alt = "Imagen";
+            img.className = "imagen-personaje";
 
             // Reseteo el contenedor de la imagen 
-            imagen.innerHTML = "";
-            imagen.appendChild(img);
+            imagenPersonaje.innerHTML = "";
+            imagenPersonaje.appendChild(img);
 
         })
         .catch (error => {
@@ -47,3 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
 });
+
+function buscarPersonaje(nombre) {
+    
+}
