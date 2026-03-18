@@ -38,8 +38,7 @@ button:active{
     justify-content: center;
     background: #fafbff;
     text-align: center;
-    overflow: hidden;           /* ← recorta lo que sobresalga si hace
-   falta */
+    overflow: hidden;           /* ← recorta lo que sobresalga si hace falta */
 }
 .imagenanimal{
     width: 100%;                /* ← ocupa el ancho disponible */
