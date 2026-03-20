@@ -130,6 +130,20 @@ h1 {
     height: max(60px);
 }
 
+#sugerencias {
+    width: 300px;
+    /* border: 1px solid #ccc; */
+}
+
+.filtrado {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.filtrado:hover {
+    background-color: #eee;
+}
+
 .boton{
     background-color: #1ec229;
     font-family: 'Courier New', Courier, monospace;

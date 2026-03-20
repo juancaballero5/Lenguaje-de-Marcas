@@ -13,7 +13,38 @@ document.addEventListener("DOMContentLoaded", function() {
 const buscador = document.getElementById("buscador");
 const sugerencias = document.getElementById("sugerencias");
 
-const personajes = 
+const personajes = [
+    "Juan Caballero",
+    "Sergio Sánchez",
+    "Soraya",
+    "Alfredo Codes",
+    "Burrito Sabanero"
+];
+
+buscador.addEventListener("input", () => {
+    const texto = buscador.value.toLowerCase();
+    sugerencias.innerHTML = "";
+
+    if(texto === ""){
+        return;
+    }
+
+    const filtrados = personajes.filter((nombre) => {
+        return nombre.toLowerCase().startsWith(texto);
+    });
+    console.log(filtrados);
+
+    filtrados.forEach((nombre) => {
+        const div = document.createElement("div");
+        div.textContent = nombre;
+        div.className = "filtrado";
+        div.addEventListener("click", () => {
+            buscador.value = nombre;
+            sugerencias.innerHTML = "";
+        });
+        sugerencias.appendChild(div);
+    });
+});
 
     boton.addEventListener("click", () => {
 
