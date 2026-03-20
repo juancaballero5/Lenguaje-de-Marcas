@@ -1,19 +1,9 @@
-const ENDPOINT = "https://rickandmortyapi.com/api/";
-
-const boton = document.getElementById("boton");
-const imagenPersonaje = document.getElementById("juego");
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
 
-    
-});
+    const ENDPOINT = "https://rickandmortyapi.com/api/";
 
-const buscador = document.getElementById("buscador");
-const sugerencias = document.getElementById("sugerencias");
-
-const personajes = 
+    const boton = document.getElementById("boton");
+    const imagenPersonaje = document.getElementById("juego");
 
     boton.addEventListener("click", () => {
 
@@ -54,6 +44,8 @@ const personajes =
         })
 
     })
+
+});
 
 function buscarPersonaje(nombre) {
     
