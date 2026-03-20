@@ -115,13 +115,29 @@ h1 {
     margin: 20px;
 }
 
+.victoria {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: max(400px);
+    background-color:#04ff00;
+    box-shadow: 0 1px 2px rgba(0,0,0,10);
+    border: 1px solid grey;
+}
+
 .texto{
     align-self: center;
 }
 
 .buscador{
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     text-align: center;
     font-size: 1rem;
     border-radius: 12px;
@@ -144,19 +160,46 @@ h1 {
     background-color: #eee;
 }
 
+.tabla{
+    align-self: center;
+}
+
+.tabla_sugerencias{
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, ;
+    background-color: #eee;
+    align-self: center;
+    text-align: center;
+}
+
 .boton{
-    background-color: #1ec229;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2rem;
+    margin-top: 15px;
     border-radius: 12px;
     align-self: center;
     width: max(300px);
     height: max(60px);
 }
 
-.boton:hover{
+.verde{
+    background-color: #1ec229;
+}
+
+.verde:hover {
     cursor: pointer;
     background-color: #1ad526;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.rojo{
+    background-color: #e01212;
+}
+
+.rojo:hover {
+    cursor: pointer;
+    background-color: #f70404;
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
