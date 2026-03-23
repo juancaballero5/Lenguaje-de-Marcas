@@ -3,19 +3,16 @@ const ENDPOINT_PERSONAJES = "https://rickandmortyapi.com/api/character";
 
 const boton = document.getElementById("boton");
 const imagenPersonaje = document.getElementById("juego");
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    guardarPersonajes();
-});
-
 const buscador = document.getElementById("buscador");
 const sugerencias = document.getElementById("sugerencias");
 const contenedor_botones = document.getElementById("contenedor_botones");
 const boton_adivinar = document.getElementById("adivinar");
 let nombrePersonajeActual = "";
 let personajes = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+    guardarPersonajes();
+});
 
 buscador.addEventListener("input", () => {
     const texto = buscador.value.toLowerCase();
@@ -28,7 +25,7 @@ buscador.addEventListener("input", () => {
     const filtrados = personajes.filter((nombre) => {
         return nombre.toLowerCase().startsWith(texto);
     });
-    console.log(filtrados);
+    // console.log(filtrados);
 
     filtrados.forEach((nombre) => {
         const div = document.createElement("div");
@@ -106,7 +103,7 @@ function guardarPersonajes() {
             personajes.push(...nombresPersonajes);
 
             if (data.info.next) {
-                fetchPagina(data.info.next); // ✅ se llama a sí misma con la siguiente página
+                fetchPagina(data.info.next);
             }
         })
         .catch(error => {
