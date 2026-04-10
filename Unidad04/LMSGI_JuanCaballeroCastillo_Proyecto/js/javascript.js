@@ -120,7 +120,7 @@ function adivinarPersonaje() {
     const nombreCorrecto = nombrePersonajeActual.toLowerCase();
 
     if (nombreEscrito === nombreCorrecto) {
-        contenedor_botones.innerHTML=`<div class="victoria"> !ADIVINASTE EL PERSONAJE¡ </div>
+        contenedor_botones.innerHTML=`<div class="victoria"> ¡ADIVINASTE EL PERSONAJE! </div>
                                         <button id="boton" class="boton verde"><strong>¿REPETIR?</strong></button>`
         document.getElementById("boton").addEventListener("click", iniciarJuego);
     }
